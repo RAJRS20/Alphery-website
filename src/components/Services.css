@@ -1,0 +1,118 @@
+.services {
+    background-color: var(--bg-dark);
+}
+
+.services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.services-header h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 0;
+}
+
+.service-count {
+    font-size: 1rem;
+    color: var(--text-grey);
+    font-family: var(--font-body);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Responsive Grid */
+    gap: 1px;
+    /* Gap for border effect */
+    background-color: var(--border-color);
+    /* Creates the border lines */
+    border: 1px solid var(--border-color);
+}
+
+.service-card {
+    background-color: var(--bg-dark);
+    padding: 40px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    background-color: #151515;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.service-icon {
+    font-size: 2rem;
+    color: var(--text-white);
+    transition: transform 0.3s ease;
+}
+
+.service-arrow {
+    font-size: 1.2rem;
+    color: var(--text-grey);
+    transform: rotate(-45deg);
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.service-card:hover .service-arrow {
+    transform: rotate(0deg);
+    opacity: 1;
+    color: var(--text-white);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-white);
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    line-height: 1.6;
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Hover overlay effect (optional) */
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.03);
+    transition: height 0.4s ease;
+    z-index: 0;
+}
+
+.service-card:hover::after {
+    height: 100%;
+}
+
+.see-more-btn {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}

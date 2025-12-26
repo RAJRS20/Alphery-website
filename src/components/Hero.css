@@ -1,0 +1,79 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Align content to bottom to match image placement */
+    padding-top: var(--header-height);
+    padding-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 60px;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    color: var(--text-white);
+    line-height: 1;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+.hero-text-thin {
+    font-weight: 300;
+    /* Thin font for "CREATIVE" */
+    font-size: clamp(2rem, 6vw, 5rem);
+    letter-spacing: 0.05em;
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    /* Ensure it uses the heading font */
+}
+
+.hero-text-bold {
+    font-weight: 800;
+    /* Extra bold for "DIGITAL AGENCY" */
+    font-size: clamp(3.5rem, 13vw, 10rem);
+    letter-spacing: -0.02em;
+    display: block;
+    white-space: nowrap;
+    /* Keep on one line if possible, or wrap naturally */
+}
+
+/* Bottom Visual */
+.hero-visual {
+    width: 100%;
+    height: 50vh;
+    /* Takes up bottom half */
+    position: relative;
+    overflow: hidden;
+    /* Remove border radius to match the edge-to-edge look */
+}
+
+.hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    /* Focus on the desk/people */
+    filter: brightness(0.8);
+    /* Slightly dim to mix with dark mode */
+}

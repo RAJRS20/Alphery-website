@@ -1,0 +1,72 @@
+.why-choose-us {
+    position: relative;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+/* Remove decorative blur */
+.why-choose-us::before {
+    display: none;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.reason-card {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: var(--radius-sm);
+}
+
+.reason-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.reason-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    color: white;
+}
+
+/* Optional minimal float but much slower/subtler */
+.reason-card .reason-icon {
+    /* No robust animation by default for industrial look, maybe just static or very slow opacity pulse */
+    opacity: 0.8;
+}
+
+.reason-card:hover .reason-icon {
+    opacity: 1;
+}
+
+.reason-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.reason-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+}

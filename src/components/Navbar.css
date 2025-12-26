@@ -1,0 +1,191 @@
+/* Navbar.css */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000;
+    background: rgba(12, 12, 12, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    /* Ensure it spans */
+    padding: 0 60px;
+    /* Push to corners with safe spacing */
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 1002;
+    /* Above overlay */
+}
+
+/* Updated logo class */
+.logo-main {
+    height: 40px;
+    /* Slightly larger for single logo visibility */
+    width: auto;
+    /* Removed to show original logo colors */
+    display: block;
+}
+
+/* Menu Button */
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+    z-index: 1002;
+    /* Above overlay */
+    mix-blend-mode: difference;
+    /* Optional: ensures visibility */
+}
+
+.hamburger {
+    width: 24px;
+    height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-white);
+    transition: all 0.3s ease;
+}
+
+/* Menu Open State Animation */
+.menu-open .hamburger span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-open .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .hamburger span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Full Screen Overlay */
+/* Dropdown Menu */
+.menu-overlay {
+    position: fixed;
+    top: 80px;
+    /* Below navbar */
+    right: 60px;
+    /* Align with right padding */
+    width: 250px;
+    height: auto;
+    background-color: rgba(12, 12, 12, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 0 0 4px 4px;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.nav-links {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-links li:last-child {
+    border-bottom: none;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    /* Switch to body font for dropdown */
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-grey);
+    text-transform: uppercase;
+    display: block;
+    padding: 15px 25px;
+    transform: none;
+    /* Remove slide up */
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
+}
+
+/* Remove old stagger animations */
+.menu-overlay.active .nav-link {
+    transform: none;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-white);
+    padding-left: 30px;
+    /* Slight nudge effect */
+}
+
+.nav-link span {
+    font-size: 0.8rem;
+    margin-right: 15px;
+    color: var(--color-primary);
+    /* Use primary or accent */
+    opacity: 0.5;
+}
+
+.nav-link:hover {
+    color: var(--text-white);
+}
+
+.nav-link span {
+    font-size: 1rem;
+    vertical-align: top;
+    margin-right: 10px;
+    color: var(--text-grey);
+}

@@ -1,0 +1,236 @@
+.tools-page {
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/* Hero Section */
+.tools-hero {
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tools-hero h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.tools-hero-desc {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Featured Tools */
+.featured-tools {
+    padding: 3rem 0;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.featured-tool-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+}
+
+.featured-tool-card:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.05);
+    transform: none;
+    box-shadow: none;
+}
+
+.featured-tool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.featured-tool-icon {
+    font-size: 3rem;
+    filter: grayscale(100%);
+    /* Monochromatic icons */
+}
+
+.live-badge {
+    padding: 4px 8px;
+    background: transparent;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    border-radius: 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+}
+
+.featured-tool-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.featured-tool-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    font-weight: 300;
+}
+
+.featured-tool-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature-badge {
+    padding: 0.3rem 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    border-radius: 0;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+}
+
+/* Links/Buttons */
+.tool-link-btn {
+    margin-top: auto;
+    width: 100%;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    text-transform: uppercase;
+    padding: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.tool-link-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* All Tools Section */
+.all-tools-section {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    border-color: white;
+    color: white;
+    background: transparent;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.tool-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    padding: 1.5rem;
+    text-align: left;
+    /* Industrial style often prefers left align lists */
+    transition: all 0.2s ease;
+}
+
+.tool-card:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.05);
+    transform: none;
+}
+
+.tool-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    filter: grayscale(100%);
+}
+
+.tool-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.tool-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 768px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-filter {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+}
